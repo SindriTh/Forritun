@@ -9,7 +9,7 @@ while(continue_str == "y"):
     
     miles_driven = odo_end_int - odo_start_int
     print("Miles driven: ",miles_driven)
-    
+
     if(customer_code == "b"):
         amount_due = float(40 * number_of_days_int + (0.25 * miles_driven))
         
