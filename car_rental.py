@@ -22,4 +22,3 @@ while(continue_str == "y"):
         
     print("Amount due: ",round(amount_due,1))
     continue_str = input("Would you like to continue (y/n)? ")
-

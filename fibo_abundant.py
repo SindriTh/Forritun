@@ -17,7 +17,6 @@ if(what_to_show == "f" or what_to_show == "b" ):
             fib_int_2 = fib_int_3
             print(fib_int_3)
 
-
 if(what_to_show == "a" or what_to_show == "b" ):
     length_int = int(input("Input the max number to check: "))
 

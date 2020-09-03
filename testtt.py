@@ -20,3 +20,4 @@ if gotit and (2**max_days-1 >= target):
     print('Days needed:',days_when_amount_acquired)
 else:
     print('Days needed: 0')
+    
