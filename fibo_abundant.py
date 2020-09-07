@@ -1,8 +1,8 @@
 what_to_show = input("Input f|a|b (fibonacci, abundant or both): ")
 
 if(what_to_show == "f" or what_to_show == "b" ):
-    length_int = int(input("Input the length of the sequence: "))
 
+    length_int = int(input("Input the length of the sequence: "))
     fib_int_1 = 0
     fib_int_2 = 1
 
@@ -18,18 +18,17 @@ if(what_to_show == "f" or what_to_show == "b" ):
             print(fib_int_3)
 
 if(what_to_show == "a" or what_to_show == "b" ):
-    length_int = int(input("Input the max number to check: "))
 
+    length_int = int(input("Input the max number to check: "))
     print("Abundant numbers:")
     print("-----------------")
 
     for num in range(1,length_int+1):
-
         sum = 0
 
-        for i in range(1,num+1):
+        for i in range(1,num):
             if(num % i == 0):
                 sum += i
-
+        
         if(num < sum):
             print(num)
