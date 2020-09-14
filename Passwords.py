@@ -9,7 +9,7 @@ while(passw != "q"):
     litill=0
     stor=0
     tolur=0
-    
+
     for i in (passw):
         if (97 <= ord(i) <= 122):
             litill += 1
@@ -21,7 +21,7 @@ while(passw != "q"):
     lengd=litill+stor+tolur
 
     if MINIMUM<=lengd<=MAXIMUM and litill>0 and stor>0 and tolur>0:
-        print('Valid password of lenght ',lengd)
+        print('Valid password of length ',lengd)
         valid +=1
 
     else:
@@ -34,8 +34,8 @@ while(passw != "q"):
                 print('At least one upper case letter needed')
             if (tolur>0) == False:
                 print('At least one number needed')
-    total += 1
 
+    total += 1
     passw= input('Enter a new password: ')
 
 print("You tried {} passwords, {} valid, {} invalid".format(total,valid,total-valid))
