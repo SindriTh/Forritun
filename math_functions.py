@@ -24,26 +24,25 @@ def getoutstring(selected,inputnumber):
 
     if(selected == "a"):
         outputstring = "Natural number sum: {}".format(sum_natural(inputnumber))
-
     elif(selected == "b"):
         outputstring = "Fibonacci sum: {}".format(sum_fibonacci(inputnumber))
-    
     else:
          outputstring = "Euler approximation: {}".format(approximate_euler(inputnumber))
-    
+
     return outputstring
     
 
 
 def sum_natural(n_int):
-    if n_int >= 2:
 
+    if n_int >= 2:
         result = int(n_int*(n_int+1) / 2)
         return result
 
 
 
 def sum_fibonacci(n_int):
+
     if n_int >= 2:
 
         fib_int_1 = 0
@@ -55,12 +54,13 @@ def sum_fibonacci(n_int):
             fib_int_1 = fib_int_2
             fib_int_2 = fib_int_3
             result += fib_int_3
+
         return result
 
 def approximate_euler(n_int):
     if n_int >= 2:
-
         result = 1
+
         for i in range(1,n_int):
             result += 1/ math.factorial(i)
 
@@ -70,6 +70,7 @@ def approximate_euler(n_int):
 option = ""
 valmynd()
 while option != "x":
+    
     option = input("Enter option: ").lower()
 
     if isallowed(option):
