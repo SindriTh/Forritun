@@ -75,9 +75,7 @@ def approximate_euler(n_str):
 
         return round(result,5)
 
-
 # Aðal keyrsla forritsins
-
 option = ""
 valmynd()
 while option != EXIT:
@@ -86,9 +84,13 @@ while option != EXIT:
 
     if isallowed(option):
         number = input("Enter N: ")
-        outstring = getoutstring(option,number)
-        print(outstring)
-        print()
+        if number.isdigit() and int(number) >= 2:
+            outstring = getoutstring(option,number)
+            print(outstring)
+            print()
+        else:
+            print("Error:", number, "was not a valid number.")
+            print()
 
     elif(option != EXIT):
         print("Unrecognized option ",option)
