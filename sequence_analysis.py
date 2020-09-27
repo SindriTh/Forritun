@@ -29,8 +29,10 @@ def median(sequence):
 
     if not len(sequence) == 0:
         if len(sequence) % 2 == 0:
+            # finds the two values in the middle and finds their average
             output = (sequence[math.floor((len(sequence))/ 2)-1] + sequence[math.ceil((len(sequence))/ 2)]) / 2
         else:
+             # finds the value in the middle
             output = sequence[int((len(sequence)+1)/ 2) - 1]
         
         return (round(output,ROUNDTO))
@@ -38,6 +40,7 @@ def median(sequence):
     else:
         return ""
 
+# A function that prints the screen output
 def printlines(sequence):
     print("File {}".format(files))
 
@@ -58,13 +61,11 @@ def printlines(sequence):
 
 
 # The main program
-
 filename = input("Enter filename: ")
 print()
 
 for files in filename.split():
 
     file_obj = open(files)
-    sequence =filetolist(file_obj)
-    printlines(sequence)
-
+    numbers =filetolist(file_obj)
+    printlines(numbers)
