@@ -8,10 +8,10 @@ def filetolist(fileobject):
     for line in fileobject.readlines():
         try:
             value = float(line)
+            if value not in outlist:
+                outlist.append(round(value,ROUNDTO))
         except ValueError:
             pass
-        if value not in outlist:
-            outlist.append(round(value,ROUNDTO))
     return outlist
 
 # A function to find the cumulative sum
@@ -34,7 +34,7 @@ def median(sequence):
         else:
              # finds the value in the middle
             output = sequence[int((len(sequence)+1)/ 2) - 1]
-        
+
         return (round(output,ROUNDTO))
 
     else:
@@ -42,30 +42,35 @@ def median(sequence):
 
 # A function that prints the screen output
 def printlines(sequence):
+    print()
     print("File {}".format(files))
 
     print("\tSequence:")
-    print("\t\t", *sequence, sep=" ")
+    print("\t\t",end="")
+    print(*sequence, sep=" ", end=" \n")
 
     print("\tCumulative sum:")
-    print("\t\t", *cumsum(sequence), sep=" ")
+    print("\t\t",end="")
+    print(*cumsum(sequence), sep=" ", end=" \n")
 
     sequence.sort()
     print("\tSorted sequence:")
-    print("\t\t", *sequence, sep=" ")
+    print("\t\t",end="")
+    print(*sequence, sep=" ", end=" \n")
 
     print("\tMedian:")
     print("\t\t{}".format(median(sequence)))
 
-    print()
 
 
 # The main program
-filename = input("Enter filename: ")
-print()
+filename = input("Enter filenames: ")
 
 for files in filename.split():
-
-    file_obj = open(files)
-    numbers =filetolist(file_obj)
-    printlines(numbers)
+    try:
+        file_obj = open(files)
+        numbers =filetolist(file_obj)
+        printlines(numbers)
+    except FileNotFoundError:
+        print()
+        print("File {} not found".format(files))
