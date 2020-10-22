@@ -8,7 +8,7 @@ class Counter():
         return "Counter value: {}".format(self.value)
 
     def increment(self, value=1): # If a value is put in, slef increments by that value
-        self.value += valuea
+        self.value += value
 
     def decrement(self,value=1):
         self.value -= value
